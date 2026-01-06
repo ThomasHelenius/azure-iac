@@ -1,0 +1,18 @@
+# Code Owners for Azure IaC Repository
+# These owners will be automatically requested for review on PRs
+
+# Default owners for everything
+* @platform-team
+
+# Terraform modules
+/terraform/ @platform-team
+
+# Security-sensitive configurations
+/terraform/modules/keyvault/ @security-team @platform-team
+/terraform/modules/networking/ @security-team @platform-team
+
+# CI/CD workflows
+/.github/ @platform-team
+
+# Documentation
+/*.md @platform-team

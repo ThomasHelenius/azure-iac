@@ -1,0 +1,24 @@
+# -----------------------------------------------------------------------------
+# Grafana Datasource Provisioning
+# Automatically configures datasources on startup
+# -----------------------------------------------------------------------------
+
+apiVersion: 1
+
+datasources:
+  # PostgreSQL datasource
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    database: app
+    user: postgres
+    secureJsonData:
+      password: ${POSTGRES_PASSWORD}
+    jsonData:
+      sslmode: disable
+      maxOpenConns: 10
+      maxIdleConns: 5
+      connMaxLifetime: 14400
+    isDefault: true
+    editable: false
